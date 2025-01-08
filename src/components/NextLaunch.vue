@@ -25,7 +25,7 @@
                 const formattedDate = computed(() => {
                     if (launch.value) {
                         return new Date(launch.value.date_utc).toLocaleString();
-                        }
+                    }
                     return '';
                 });
             

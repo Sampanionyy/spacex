@@ -1,14 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {
-            colors: {
-                primary: {
-                    DEFAULT: "#14B8A6", // teal-500
-                },
-            },
-        },
+      extend: {},
+    },
+    variants: {
+      extend: {},
     },
     plugins: [],
-};
+  }
