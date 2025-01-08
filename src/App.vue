@@ -1,30 +1,45 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <div class="min-h-screen bg-gray-100">
+    <header class="bg-teal-500 text-white p-4">
+        <nav class="flex justify-center space-x-8">
+            <a href="#next-launch" class="text-xl hover:text-teal-300 !text-red-600">Prochain Lancement</a>
+            <a href="#launch-list" class="text-xl hover:text-teal-300">Liste des Lancements</a>
+        </nav>
+    </header>
+
+    <main class="p-6">
+        <section id="next-launch" class="mb-8">
+            <NextLaunch />
+        </section>
+
+        <section id="launch-list" class="mb-8">
+            <LaunchList />
+        </section>
+    </main>
+    </div>
 </template>
 
+<script lang="ts">
+    import { defineComponent } from 'vue';
+    import NextLaunch from './components/NextLaunch.vue';
+    import LaunchList from './components/LaunchList.vue';
+
+    export default defineComponent({
+        components: {
+            NextLaunch,
+            LaunchList,
+        },
+    });
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+    /* Style pour le menu de navigation */
+    header nav a {
+        text-decoration: none;
+    }
+    header nav a:hover {
+        text-decoration: underline;
+    }
 </style>
+    
